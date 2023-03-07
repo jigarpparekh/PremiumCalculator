@@ -56,3 +56,4 @@ D:\Project\PremiumCalculator\PremiumCalculator\obj\Debug\net5.0\PremiumCalculato
 D:\Project\PremiumCalculator\PremiumCalculator\obj\Debug\net5.0\ref\PremiumCalculator.dll
 D:\Project\PremiumCalculator\PremiumCalculator\obj\Debug\net5.0\PremiumCalculator.pdb
 D:\Project\PremiumCalculator\PremiumCalculator\obj\Debug\net5.0\PremiumCalculator.genruntimeconfig.cache
+D:\Project\PremiumCalculator\PremiumCalculator\bin\Debug\net5.0\Newtonsoft.Json.dll
