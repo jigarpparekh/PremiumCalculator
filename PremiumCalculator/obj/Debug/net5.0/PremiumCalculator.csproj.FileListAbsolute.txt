@@ -27,6 +27,13 @@ D:\Project\PremiumCalaculator\PremiumCalculator\obj\Debug\net5.0\PremiumCalculat
 D:\Project\PremiumCalaculator\PremiumCalculator\obj\Debug\net5.0\ref\PremiumCalculator.dll
 D:\Project\PremiumCalaculator\PremiumCalculator\obj\Debug\net5.0\PremiumCalculator.pdb
 D:\Project\PremiumCalaculator\PremiumCalculator\obj\Debug\net5.0\PremiumCalculator.genruntimeconfig.cache
+D:\Project\PremiumCalculator\PremiumCalculator\obj\Debug\net5.0\PremiumCalculator.GeneratedMSBuildEditorConfig.editorconfig
+D:\Project\PremiumCalculator\PremiumCalculator\obj\Debug\net5.0\PremiumCalculator.AssemblyInfoInputs.cache
+D:\Project\PremiumCalculator\PremiumCalculator\obj\Debug\net5.0\PremiumCalculator.AssemblyInfo.cs
+D:\Project\PremiumCalculator\PremiumCalculator\obj\Debug\net5.0\PremiumCalculator.csproj.CoreCompileInputs.cache
+D:\Project\PremiumCalculator\PremiumCalculator\obj\Debug\net5.0\PremiumCalculator.MvcApplicationPartsAssemblyInfo.cs
+D:\Project\PremiumCalculator\PremiumCalculator\obj\Debug\net5.0\PremiumCalculator.MvcApplicationPartsAssemblyInfo.cache
+D:\Project\PremiumCalculator\PremiumCalculator\obj\Debug\net5.0\PremiumCalculator.csproj.AssemblyReference.cache
 D:\Project\PremiumCalculator\PremiumCalculator\bin\Debug\net5.0\appsettings.Development.json
 D:\Project\PremiumCalculator\PremiumCalculator\bin\Debug\net5.0\appsettings.json
 D:\Project\PremiumCalculator\PremiumCalculator\bin\Debug\net5.0\PremiumCalculator.exe
@@ -37,16 +44,10 @@ D:\Project\PremiumCalculator\PremiumCalculator\bin\Debug\net5.0\PremiumCalculato
 D:\Project\PremiumCalculator\PremiumCalculator\bin\Debug\net5.0\ref\PremiumCalculator.dll
 D:\Project\PremiumCalculator\PremiumCalculator\bin\Debug\net5.0\PremiumCalculator.pdb
 D:\Project\PremiumCalculator\PremiumCalculator\bin\Debug\net5.0\Microsoft.OpenApi.dll
+D:\Project\PremiumCalculator\PremiumCalculator\bin\Debug\net5.0\Newtonsoft.Json.dll
 D:\Project\PremiumCalculator\PremiumCalculator\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
 D:\Project\PremiumCalculator\PremiumCalculator\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 D:\Project\PremiumCalculator\PremiumCalculator\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-D:\Project\PremiumCalculator\PremiumCalculator\obj\Debug\net5.0\PremiumCalculator.csproj.AssemblyReference.cache
-D:\Project\PremiumCalculator\PremiumCalculator\obj\Debug\net5.0\PremiumCalculator.GeneratedMSBuildEditorConfig.editorconfig
-D:\Project\PremiumCalculator\PremiumCalculator\obj\Debug\net5.0\PremiumCalculator.AssemblyInfoInputs.cache
-D:\Project\PremiumCalculator\PremiumCalculator\obj\Debug\net5.0\PremiumCalculator.AssemblyInfo.cs
-D:\Project\PremiumCalculator\PremiumCalculator\obj\Debug\net5.0\PremiumCalculator.csproj.CoreCompileInputs.cache
-D:\Project\PremiumCalculator\PremiumCalculator\obj\Debug\net5.0\PremiumCalculator.MvcApplicationPartsAssemblyInfo.cs
-D:\Project\PremiumCalculator\PremiumCalculator\obj\Debug\net5.0\PremiumCalculator.MvcApplicationPartsAssemblyInfo.cache
 D:\Project\PremiumCalculator\PremiumCalculator\obj\Debug\net5.0\staticwebassets\PremiumCalculator.StaticWebAssets.Manifest.cache
 D:\Project\PremiumCalculator\PremiumCalculator\obj\Debug\net5.0\staticwebassets\PremiumCalculator.StaticWebAssets.xml
 D:\Project\PremiumCalculator\PremiumCalculator\obj\Debug\net5.0\scopedcss\bundle\PremiumCalculator.styles.css
@@ -56,4 +57,3 @@ D:\Project\PremiumCalculator\PremiumCalculator\obj\Debug\net5.0\PremiumCalculato
 D:\Project\PremiumCalculator\PremiumCalculator\obj\Debug\net5.0\ref\PremiumCalculator.dll
 D:\Project\PremiumCalculator\PremiumCalculator\obj\Debug\net5.0\PremiumCalculator.pdb
 D:\Project\PremiumCalculator\PremiumCalculator\obj\Debug\net5.0\PremiumCalculator.genruntimeconfig.cache
-D:\Project\PremiumCalculator\PremiumCalculator\bin\Debug\net5.0\Newtonsoft.Json.dll

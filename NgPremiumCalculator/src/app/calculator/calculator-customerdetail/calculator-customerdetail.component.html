@@ -1,0 +1,87 @@
+
+<div class="formcontainer">
+<form [formGroup]="calcPrem" (ngSubmit)="onSubmit()">
+
+
+  <div class="divTable container" style="width: 100%;">
+    <div class="divTableBody">
+      <div class="divTableRow">
+        <div class="divTableCell">Name</div>
+        <div class="divTableCell">
+          <input class="form-control" formControlName="fname" type="text" id="fname" name="fname"
+            [ngClass]="{ 'is-invalid': isSubmitted && FirstName.errors }">
+          <div *ngIf="isSubmitted && FirstName.errors" class="invalid-feedback">
+            <div *ngIf="isSubmitted && FirstName.errors?.['required']">Name is Required.</div>
+          </div>
+        </div>
+      </div>
+      <div class="divTableRow">
+        <div class="divTableCell">Age</div>
+        <div class="divTableCell">
+          <input class="form-control" type="text" formControlName="age" id="age" name="age"
+            [ngClass]="{ 'is-invalid': isSubmitted && Age.errors }" (keypress)="numberOnly($event)">
+          <div *ngIf="isSubmitted && Age.errors" class="invalid-feedback">
+            <div *ngIf="isSubmitted && Age.errors?.['required']">Age is Required.</div>
+            <div *ngIf="isSubmitted && Age.errors?.['maxlength']">Age should be two digits only.</div>
+          </div>
+        </div>
+      </div>
+      <div class="divTableRow">
+        <div class="divTableCell">Date of Birth</div>
+        <div class="divTableCell">
+          <input type="date" formControlName="dob" name="dob" class="form-control"
+            [ngClass]="{ 'is-invalid': isSubmitted && DOB.errors }">
+          <div *ngIf="isSubmitted && DOB.errors" class="invalid-feedback">
+            <div *ngIf="DOB.errors?.['required']">Date of Birth is required</div>
+            <div *ngIf="DOB.errors?.['pattern']">Date of Birth must be a valid date in the format DD-MM-YYYY.</div>
+            <div *ngIf="DOB.errors?.['notUnique']">Date of Birth is greater than 70 years.</div>
+          </div>
+        </div>
+
+      </div>
+      <div class="divTableRow">
+        <div class="divTableCell">Occupation</div>
+        <div class="divTableCell">
+          <select class="form-control dropdown-toggle" (change)="changeOccupation($event)" formControlName="Occupation"
+            [ngClass]="{ 'is-invalid': isSubmitted && Occupation.errors }">
+            <option value="0" selected>Select</option>
+            <option value="1.50">Cleaner</option>
+            <option value="1.0">Doctor</option>
+            <option value="1.25">Author</option>
+            <option value="1.75">Farmer</option>
+            <option value="1.75">Mechanic</option>
+            <option value="1.50">Florist</option>
+          </select>
+          <div *ngIf="isSubmitted && Occupation.errors" class="invalid-feedback">
+            <div *ngIf="isSubmitted && Occupation.errors?.['required'] or Occupation.errors?.['notUnique']">Select Occupation.</div>
+          </div>
+        </div>
+      </div>
+      <div class="divTableRow">
+        <div class="divTableCell">Sum Insured</div>
+        <div class="divTableCell"><input class="form-control" type="text" formControlName="sumins" id="sumins"
+            name="sumins" [ngClass]="{ 'is-invalid': isSubmitted && SumInsured.errors }" (keypress)="numberOnly($event)">
+          <div *ngIf="isSubmitted && SumInsured.errors" class="invalid-feedback">
+            <div *ngIf="isSubmitted && SumInsured.errors?.['required']">Sum Insured is Required.</div>
+          </div>
+        </div>
+      </div>
+      <div class="divTableRow">
+        <div class="divTableCell">&nbsp;</div>
+        <div class="divTableCell"><button class="btn btn-primary" type="submit">Calculate</button></div>
+        <div class="divTableCell">
+          &nbsp;
+        </div>
+      </div>
+    </div>
+  </div>
+<br>
+<br>
+
+  <div *ngIf="getPremiumData" class="divTable form-control" style="width: 100%;">
+    <h2>Premium Details - </h2>
+    <p>{{getPremiumData}}</p>
+
+  </div>
+</form>
+</div>

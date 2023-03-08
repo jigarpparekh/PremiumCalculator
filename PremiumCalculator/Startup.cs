@@ -7,6 +7,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using PremiumCalculator.Services;
+using PremiumCalculator.Services.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,6 +34,9 @@ namespace PremiumCalculator
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "PremiumCalculator", Version = "v1" });
             });
+
+            services.AddCors();
+            services.AddScoped<ICalculationService, CalculationService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,6 +52,8 @@ namespace PremiumCalculator
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors(m => m.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
 
             app.UseAuthorization();
 

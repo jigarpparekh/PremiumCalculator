@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using PremiumCalculator.Models;
+using PremiumCalculator.Services.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,24 +17,43 @@ namespace PremiumCalculator.Controllers
     [ApiController]
     public class PremiumCalculationController : ControllerBase
     {
-        // GET: api/<PremiumCalculationController>
-        [HttpGet("{SumInsured}/{OccupationRating}/{Age}")]
-        public IEnumerable<string> Get(int SumInsured, double OccupationRating, double Age)
+        private readonly ICalculationService _calculationService;
+        public PremiumCalculationController(ICalculationService calculationService)
         {
-            if (Age <= 70)
+            _calculationService = calculationService;
+        }
+        // GET: api/<PremiumCalculationController>
+        //[HttpGet("{SumInsured}/{OccupationRating}/{Age}")]
+        //public IEnumerable<string> Get(int SumInsured, double OccupationRating, double Age)
+        //{
+        //    if (Age <= 70)
+        //    {
+        //        Premium premium = new();
+        //        premium.Age = Age;
+        //        premium.OccupationRating = OccupationRating;
+        //        premium.SumInsured = SumInsured;
+
+        //        return _calculationService.calculate(premium);
+        //    }
+
+        //    else
+        //    {
+        //        return new string[] { HttpStatusCode.NotAcceptable.ToString(), "Age is out of limit" };
+        //    }
+        //}
+
+        [HttpPost]
+        [ProducesResponseType(200, Type = typeof(decimal))]
+        [ProducesResponseType(400, Type = typeof(void))]
+        public IEnumerable<string> CalcutaePremium([FromBody] Premium premium)
+        {
+            if (premium.Age <= 70)
             {
-                Premium premium = new();
-
-                premium.DeathPremium = (float)((SumInsured * OccupationRating * Age) / 1000 * 12);
-                premium.TPDPremiumMonthly = (float)((SumInsured * OccupationRating * Age) / 1234);
-
-                string json = JsonConvert.SerializeObject(premium);
-                return new string[] { premium.DeathPremium.ToString("0.00"), premium.TPDPremiumMonthly.ToString("0.00") };
+                return _calculationService.calculate(premium);
             }
 
             else
             {
-                //return new HttpResponseMessage(HttpStatusCode.NotAcceptable);
                 return new string[] { HttpStatusCode.NotAcceptable.ToString(), "Age is out of limit" };
             }
         }

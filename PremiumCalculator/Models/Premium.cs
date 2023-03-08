@@ -7,8 +7,8 @@ namespace PremiumCalculator.Models
 {
     public class Premium
     {
-        public int SumInsured { get; set; }
-        public double OccupationRating { get; set; }
+        public int Sumins { get; set; }
+        public double Occupation { get; set; }
         public double Age { get; set; }
 
         public float DeathPremium { get; set; }
