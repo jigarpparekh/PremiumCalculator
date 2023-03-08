@@ -16,7 +16,7 @@ namespace PremiumCalculator.Services
             premium.TPDPremiumMonthly = (float)((premium.Sumins * premium.Occupation * premium.Age) / 1234);
 
             
-            return new string[] { "Death Premium : " + premium.DeathPremium.ToString("0.00"), "TPD Premium Monthly : " + premium.TPDPremiumMonthly.ToString("0.00") };
+            return new string[] { premium.DeathPremium.ToString("0.00"), premium.TPDPremiumMonthly.ToString("0.00") };
         }
     }
 }

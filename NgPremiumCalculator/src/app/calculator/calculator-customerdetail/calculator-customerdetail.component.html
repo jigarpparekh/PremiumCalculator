@@ -1,9 +1,11 @@
 
 <div class="formcontainer">
 <form [formGroup]="calcPrem" (ngSubmit)="onSubmit()">
+  <div style="background-color: cornflowerblue;border: 1px solid black;"><br>
+<h1>&nbsp;&nbsp;Calaculate Premium</h1>
+</div>
 
-
-  <div class="divTable container" style="width: 100%;">
+  <div class="divTable container" style="width: 370px; height: 335px; border: 1px solid black;">
     <div class="divTableBody">
       <div class="divTableRow">
         <div class="divTableCell">Name</div>
@@ -34,7 +36,7 @@
           <div *ngIf="isSubmitted && DOB.errors" class="invalid-feedback">
             <div *ngIf="DOB.errors?.['required']">Date of Birth is required</div>
             <div *ngIf="DOB.errors?.['pattern']">Date of Birth must be a valid date in the format DD-MM-YYYY.</div>
-            <div *ngIf="DOB.errors?.['notUnique']">Date of Birth is greater than 70 years.</div>
+            <div *ngIf="DOB.errors?.['notUnique']">Date of Birth/Age is greater than 70 years.</div>
           </div>
         </div>
 
@@ -42,9 +44,9 @@
       <div class="divTableRow">
         <div class="divTableCell">Occupation</div>
         <div class="divTableCell">
-          <select class="form-control dropdown-toggle" (change)="changeOccupation($event)" formControlName="Occupation"
+          <select class="dropdown-toggle" (change)="changeOccupation($event)" formControlName="Occupation"
             [ngClass]="{ 'is-invalid': isSubmitted && Occupation.errors }">
-            <option value="0" selected>Select</option>
+            <option value="" selected>Select</option>
             <option value="1.50">Cleaner</option>
             <option value="1.0">Doctor</option>
             <option value="1.25">Author</option>
@@ -53,7 +55,7 @@
             <option value="1.50">Florist</option>
           </select>
           <div *ngIf="isSubmitted && Occupation.errors" class="invalid-feedback">
-            <div *ngIf="isSubmitted && Occupation.errors?.['required'] or Occupation.errors?.['notUnique']">Select Occupation.</div>
+            <div *ngIf="isSubmitted && occupationRequired">Select Occupation.</div>
           </div>
         </div>
       </div>
@@ -68,20 +70,18 @@
       </div>
       <div class="divTableRow">
         <div class="divTableCell">&nbsp;</div>
-        <div class="divTableCell"><button class="btn btn-primary" type="submit">Calculate</button></div>
+        <div class="divTableCell"><button class="btn btn-primary" type="submit"> Calculate </button></div>
         <div class="divTableCell">
           &nbsp;
         </div>
       </div>
     </div>
   </div>
-<br>
-<br>
-
-  <div *ngIf="getPremiumData" class="divTable form-control" style="width: 100%;">
+  &nbsp;
+  <div *ngIf="DeathPremium && TPDPremiumMonthly" class="form-control" style="width: 100%;">
     <h2>Premium Details - </h2>
-    <p>{{getPremiumData}}</p>
-
+    <b>Death Premium : </b><span>{{DeathPremium}}</span><br>
+    <b>TPD Premium Monthly : </b><span>{{TPDPremiumMonthly}}</span>
   </div>
 </form>
 </div>

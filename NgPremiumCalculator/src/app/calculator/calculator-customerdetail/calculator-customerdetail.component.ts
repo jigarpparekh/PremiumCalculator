@@ -14,11 +14,11 @@ import { HttpClient } from '@angular/common/http';
 
 export class CalculatorCustomerdetailComponent implements OnInit {
   isSubmitted = false;
-  getPremiumData = "";
   calculation!: Calculation;
   result!: any;
-  DeathPremium!: any;
-  TPDPremiumMonthly: any;
+  DeathPremium = "";
+  TPDPremiumMonthly = "";
+  occupationRequired = "";
 
   numberOnly(event: { which: any; keyCode: any; }): boolean {
     const charCode = (event.which) ? event.which : event.keyCode;
@@ -53,25 +53,31 @@ export class CalculatorCustomerdetailComponent implements OnInit {
   onSubmit() {
     var i = false;
     var curAge = 0;
+    let formAge = this.calcPrem.value.age as unknown as number;
     if (this.calcPrem.value.dob) {
       var timeDiff = Math.abs(Date.now() - new Date(this.calcPrem.value.dob).getTime());
       curAge = Math.floor(timeDiff / (1000 * 3600 * 24) / 365.25);
     }
     this.isSubmitted = true;
-    if (this.calcPrem.valid && curAge <= 70 && this.Occupation.value != 0) {
+    if (this.calcPrem.valid && curAge <= 70 && formAge <= 70 && this.Occupation.value != 0) {
       i = true;
       const calc = Object.assign({}, this.calculation, this.calcPrem.value );
       this.calculationService.Calculate(calc).subscribe((results) => {
-        this.getPremiumData = results;
+
+        if(results.length > 0){
+        this.DeathPremium = results[0];
+        this.TPDPremiumMonthly = results[1];
+        }
     });
     } else {
-      if (curAge > 70) {
+      if (curAge > 70 || formAge > 70) {
         this.DOB.setErrors({ notUnique: true });
       }
       if (this.Occupation.value == 0) {
         this.Occupation.setErrors({ notUnique: true })
-        alert("Pease select the ocuupation.");
+        this.occupationRequired = "required";
       }
+
       i = false;
 
     }
